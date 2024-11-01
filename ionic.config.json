@@ -3,5 +3,8 @@
   "integrations": {
     "capacitor": {}
   },
+  "assets": {
+    "icons": "src/assets/icons"
+  },
   "type": "vue-vite"
 }

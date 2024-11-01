@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
-
+import './tailwind.css'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
 
@@ -19,7 +19,7 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
-
+import { IonThumbnail } from '@ionic/vue';
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -29,11 +29,16 @@ import '@ionic/vue/css/display.css';
 
 /* @import '@ionic/vue/css/palettes/dark.always.css'; */
 /* @import '@ionic/vue/css/palettes/dark.class.css'; */
-import '@ionic/vue/css/palettes/dark.system.css';
+//import '@ionic/vue/css/palettes/ligth.system.css';
 
 /* Theme variables */
-import './theme/variables.css';
-
+//import './theme/variables.css';
+import { addIcons } from 'ionicons';
+import './tailwind.css'
+addIcons({
+  'home': 'public//home.svg',
+  'flag-de': 'assets/flags/de.svg'
+});
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
