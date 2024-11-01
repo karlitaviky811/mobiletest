@@ -15,11 +15,11 @@
 
         <ion-tab-button tab="tab3" href="/tabs/tab3" class="bg-toolbar">
           <ion-icon aria-hidden="true" :icon="'/promotions.svg'" />
-          <ion-label>Ordenes</ion-label>
+          <ion-label>Repuestos</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="tab3" href="/tabs/tab3" class="bg-toolbar">
           <ion-icon aria-hidden="true" :icon="'/notifications.svg'" />
-          <ion-label>Notificiones</ion-label>
+          <ion-label>Notificaciones</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>

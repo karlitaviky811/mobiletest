@@ -5,29 +5,31 @@
         <div class="custom-width">
           <ion-title class="w-auto center-title font-roboto text-xl text-xl">Servicios</ion-title>
         </div>
+        <ion-segment value="segment1" @ionChange="segmentChanged"> <ion-segment-button value="detail"> <ion-label>Segmento 1</ion-label> </ion-segment-button> <ion-segment-button value="segment2"> <ion-label>Segmento 2</ion-label> </ion-segment-button> </ion-segment>
 
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true"> <ion-segment value="default">
-        <ion-segment-button value="default">
-          <ion-label class="font-roboto font-sm">Pendientes</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="segment">
-          <ion-label class="font-roboto">Historico</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-  
-      <ItemOrders></ItemOrders>
-    </ion-content>
+        <ItemOrders @detail="goToGrandchild"></ItemOrders>
   
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonSegment, IonSegmentButton, IonTabs } from '@ionic/vue';
 import ExploreContainer from '@/components/ExploreContainer.vue';
 import ItemOrders from '@/components/ItemOrders.vue';
+import { useIonRouter } from '@ionic/vue';
+import { useRouter } from 'vue-router';
+const ionRouter = useIonRouter();
 
+const router = useRouter()
+function goToGrandchild() {
+  console.log('en el emit')
+
+  router.push('/tabs/tab2/child-a');
+};
+
+const segmentChanged = (event:any) => { router.push(`/${event.target.value}`); };
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap');

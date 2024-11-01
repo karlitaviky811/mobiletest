@@ -1,15 +1,7 @@
-<template>
-  <ion-page>
-    <ion-header class="no-background">
-      <ion-toolbar color="#0A2253" class="bg-[#0A2253] custom-toolbar shadow-lg">
-        <ion-img src="/home-toolbar.svg" class="w-[180px] mx-2 bg-transparent"></ion-img>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="false">
-      <ExploreContainer class="bg-[#F3F5FD] h-full" />
-    </ion-content>
-  </ion-page>
-</template>
+<template> <ion-page> <ion-header> <ion-toolbar> <ion-title>Segmento 1</ion-title> </ion-toolbar> </ion-header>
+        <ion-content>
+            <p>Contenido del Segmento 1</p>
+        </ion-content> </ion-page> </template>
 
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList, IonThumbnail, IonImg } from '@ionic/vue';
