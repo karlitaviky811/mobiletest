@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList, IonThumbnail } from '@ionic/vue';
+import { IonItem, IonLabel, IonList, IonThumbnail } from '@ionic/vue';
 
 defineProps({
   name: String,

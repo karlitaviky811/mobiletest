@@ -1,11 +1,17 @@
-<template> <ion-page> <ion-header> <ion-toolbar> <ion-title>Segmento 1</ion-title> </ion-toolbar> </ion-header>
-        <ion-content>
-            <p>Contenido del Segmento 1</p>
-        </ion-content> </ion-page> </template>
+<template> 
+  <ion-page> 
+    <ion-header> 
+      <ion-toolbar> 
+        <ion-title>Segmento 1</ion-title> 
+      </ion-toolbar> 
+    </ion-header>
+    <ion-content>
+      <p>Contenido del Segmento 1</p>
+    </ion-content> </ion-page> 
+</template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList, IonThumbnail, IonImg } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 </script>
 <style>
 .custom-toolbar {
@@ -27,9 +33,9 @@ import ExploreContainer from '@/components/ExploreContainer.vue';
   font-size: 30px;
 }
 
-.no-background{
+.no-background {
   background-color: #F3F5FD;
   box-shadow: none;
- 
+
 }
 </style>

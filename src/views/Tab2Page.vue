@@ -15,19 +15,17 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonSegment, IonSegmentButton, IonTabs } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle,  IonLabel, IonSegment, IonSegmentButton} from '@ionic/vue';
+
 import ItemOrders from '@/components/ItemOrders.vue';
-import { useIonRouter } from '@ionic/vue';
+
 import { useRouter } from 'vue-router';
-const ionRouter = useIonRouter();
+
 
 const router = useRouter()
 function goToGrandchild() {
-  console.log('en el emit')
-
-  router.push('/tabs/tab2/child-a');
-};
+  router.push('/tabs/detail');
+}
 
 const segmentChanged = (event:any) => { router.push(`/${event.target.value}`); };
 </script>

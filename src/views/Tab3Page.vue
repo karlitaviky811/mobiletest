@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header class="no-shadow flex justify-center">
       <ion-toolbar class="center-toolbar">
-        <ion-buttons slot="start">
+        <ion-buttons slot="start" @click="navTo">
           <ion-button>
             <ion-icon :icon="'/arrow-prev-small.svg'"></ion-icon>
           </ion-button>
@@ -14,23 +14,23 @@
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-grid>
-        <ion-row>
+        <ion-row style="width: 100%;">
           <ion-col size="12" size-md="12">
             <ion-list style="gap: 2px">
 
-              <ion-item :button="true" @click="goToGrandchild">
-                <ion-col size="7" size-md="12">
+              <ion-item :button="true">
+                <ion-col size="8" size-md="12">
                   <ion-label class="custom-title">Fecha: 15/10/2024 </ion-label>
                   <ion-label class="text-md custom-subtitle">Estatus: Pendiente por repuesto</ion-label>
                 </ion-col>
-                <ion-col size="5" size-md="12">
+                <ion-col size="4" size-md="12" style="text-align: end;">
                   <ion-chip color="warning" class="chip-status">Pendiente</ion-chip>
                   <div style="display: flex; justify-content: center; align-items: center;">
                   </div>
                 </ion-col>
               </ion-item>
 
-              <ion-item :button="true" @click="goToGrandchild">
+              <ion-item :button="true">
                 <ion-col size="12" size-md="12" style="display: flex ;flex-direction: column; gap: 4px;">
                   <ion-label class="custom-title">Dirección</ion-label>
                   <ion-label class="text-md custom-subtitle">125, 2nd street, California, 19288</ion-label>
@@ -38,7 +38,7 @@
 
               </ion-item>
 
-              <ion-item :button="true" @click="goToGrandchild">
+              <ion-item :button="true">
                 <ion-col size="12" size-md="12" style="display: flex ;flex-direction: column; gap: 4px;">
                   <ion-label class="custom-title">Servicio</ion-label>
                   <ion-label class="text-md custom-subtitle">Reparación</ion-label>
@@ -46,7 +46,7 @@
 
               </ion-item>
 
-              <ion-item :button="true" @click="goToGrandchild">
+              <ion-item :button="true">
                 <ion-col size="12" size-md="12" style="display: flex ;flex-direction: column; gap: 4px;">
                   <ion-label class="custom-title">Detalles</ion-label>
                   <ion-label class="text-md custom-subtitle">Reparación de aire acondicionado</ion-label>
@@ -85,17 +85,15 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonSegment, IonSegmentButton,IonAccordion, IonAccordionGroup, IonLabel ,IonButton, IonItem, IonList, IonThumbnail, IonCol, IonGrid, IonRow, IonChip, IonIcon, useIonRouter } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
-import ItemOrders from '@/components/ItemOrders.vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonAccordion, IonAccordionGroup, IonLabel, IonButton, IonItem, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon, } from '@ionic/vue';
 import { useRouter } from 'vue-router';
-const ionRouter = useIonRouter();
-const router = useRouter()
-const goToGrandchild = () => {
-  console.log('en el emit')
 
-  router.push('/tabs/tab2');
-};
+const router = useRouter()
+
+
+const navTo = () => {
+  router.push('/tabs/tab2')
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap');

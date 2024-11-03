@@ -5,21 +5,24 @@
                 <ion-col size="12" size-md="12">
                     <ion-list style="gap: 2px">
 
-                        <ion-item :button="true"  @click="buttonClick()" style="width: 100%;" >
-                            <ion-col size="7" size-md="12">
-                                <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
-                                <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
-                            </ion-col>
-                            <ion-col size="5" size-md="12">
-                                <ion-chip color="warning" class="chip-status">Pendiente</ion-chip>
-                                <div style="display: flex; justify-content: center; align-items: center;">
-                                    <ion-icon :icon="'/time.svg'"></ion-icon>
-                                    <ion-label class="custom-hours">2 hours ago</ion-label>
-                                </div>
-                            </ion-col>
+                        <ion-item :button="true" :detail="true" @click="buttonClick()" style="width: 100%;">
+                            <ion-row class="ion-justify-content-between"  style="width: 100%;">
+                                <ion-col size="8" size-md="12">
+                                    <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
+                                    <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
+                                </ion-col>
+                                <ion-col size="4" size-md="12" class="ion-justify-end">
+                                    <ion-chip color="warning" class="chip-status">Pendiente</ion-chip>
+                                    <div style="display: flex; justify-content: center; align-items: center;">
+                                        <ion-icon :icon="'/time.svg'"></ion-icon>
+                                        <ion-label class="custom-hours">2 hours ago</ion-label>
+                                    </div>
+                                </ion-col>
+
+                            </ion-row>
                         </ion-item>
 
-                   
+
 
 
                     </ion-list>
@@ -32,15 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList, IonThumbnail, IonCol, IonGrid, IonRow, IonChip, IonIcon } from '@ionic/vue';
-import { useRouter } from 'vue-router';
-import { useIonRouter } from '@ionic/vue';
+import { IonContent, IonItem, IonLabel, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon } from '@ionic/vue';
 import { defineEmits } from 'vue'
 const emit = defineEmits(['inFocus', 'detail'])
-const ionRouter = useIonRouter();
 
-
-const router = useRouter();
 defineProps({
     name: String,
 });
@@ -48,10 +46,6 @@ defineProps({
 function buttonClick() {
     console.log('heree')
     emit('detail')
-}
-
-function handleClick(item: string) {
-    ionRouter.push('/detail');
 }
 
 </script>
