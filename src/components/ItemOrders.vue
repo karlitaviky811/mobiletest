@@ -7,13 +7,14 @@
                 <ion-col size="12" size-md="12" color="light" style="padding: 0;">
                     <ion-list style="gap: 2px">
 
-                        <ion-item lines="none" :button="true" :detail="true" @click="buttonClick()" style="width: 100%; border: none;">
+                        <ion-item lines="none" :button="true" :detail="true" @click="buttonClick()"
+                            style="width: 100%; border: none;">
                             <ion-row class="ion-justify-content-between" style="width: 100%;">
                                 <ion-col size="8" size-md="12">
                                     <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
                                     <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
                                 </ion-col>
-                                <ion-col size="4" size-md="12" class="ion-justify-end">
+                                <ion-col size="4" size-md="12" class="ion-items-end">
                                     <ion-chip color="warning" class="chip-status">Pendiente</ion-chip>
                                     <div style="display: flex; justify-content: center; align-items: center;">
                                         <ion-icon :icon="'/time.svg'"></ion-icon>
@@ -117,14 +118,14 @@ ion-item {
     cursor: pointer;
 }
 
-ion-col{
+ion-col {
     --pading: 0;
 }
 
 ion-searchbar {
-  input {
-    border-radius: 30px !important;
-  }
+    input {
+        border-radius: 30px !important;
+    }
 }
 
 
@@ -134,7 +135,7 @@ ion-searchbar.custom {
     --placeholder-color: #fff;
     --icon-color: #000;
     --clear-button-color: #fff;
-
+    --box-shadow: none;
     --border-radius: 15px;
-  }
+}
 </style>
