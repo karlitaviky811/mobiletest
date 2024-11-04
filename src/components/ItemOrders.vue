@@ -2,7 +2,7 @@
     <ion-content color="ligth">
         <ion-grid style="padding: 0;">
             <ion-row>
-                <ion-searchbar style="box-shadow: none; border-radius: 15px;"></ion-searchbar>
+                <ion-searchbar class="custom"></ion-searchbar>
 
                 <ion-col size="12" size-md="12" color="light" style="padding: 0;">
                     <ion-list style="gap: 2px">
@@ -126,4 +126,15 @@ ion-searchbar {
     border-radius: 30px !important;
   }
 }
+
+
+ion-searchbar.custom {
+    --background: #fff;
+    --color: black;
+    --placeholder-color: #fff;
+    --icon-color: #000;
+    --clear-button-color: #fff;
+
+    --border-radius: 15px;
+  }
 </style>

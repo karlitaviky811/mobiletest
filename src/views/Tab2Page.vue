@@ -92,4 +92,5 @@ function handleInput(event: any) {
   color: #282828;
   font-weight: 600;
 }
+
 </style>
