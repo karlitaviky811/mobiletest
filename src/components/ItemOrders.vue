@@ -1,12 +1,14 @@
 <template>
-    <ion-content>
-        <ion-grid>
+    <ion-content color="ligth">
+        <ion-grid style="padding: 0;">
             <ion-row>
-                <ion-col size="12" size-md="12">
+                <ion-searchbar style="box-shadow: none; border-radius: 15px;"></ion-searchbar>
+
+                <ion-col size="12" size-md="12" color="light" style="padding: 0;">
                     <ion-list style="gap: 2px">
 
-                        <ion-item :button="true" :detail="true" @click="buttonClick()" style="width: 100%;">
-                            <ion-row class="ion-justify-content-between"  style="width: 100%;">
+                        <ion-item lines="none" :button="true" :detail="true" @click="buttonClick()" style="width: 100%; border: none;">
+                            <ion-row class="ion-justify-content-between" style="width: 100%;">
                                 <ion-col size="8" size-md="12">
                                     <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
                                     <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
@@ -107,10 +109,21 @@ function buttonClick() {
 
 .chip-status {
     color: #FF8800;
-    border: 1px solid #FF8800
+    border: 1px solid #FF8800;
+    background-color: white;
 }
 
 ion-item {
     cursor: pointer;
+}
+
+ion-col{
+    --pading: 0;
+}
+
+ion-searchbar {
+  input {
+    border-radius: 30px !important;
+  }
 }
 </style>

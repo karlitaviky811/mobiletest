@@ -34,7 +34,7 @@ import { IonThumbnail } from '@ionic/vue';
 /* Theme variables */
 //import './theme/variables.css';
 import { addIcons } from 'ionicons';
-import './tailwind.css'
+
 addIcons({
   'home': 'public//home.svg',
   'flag-de': 'assets/flags/de.svg'

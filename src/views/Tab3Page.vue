@@ -8,7 +8,7 @@
           </ion-button>
         </ion-buttons>
         <div class="custom-width">
-          <ion-title class="w-auto center-title font-roboto text-xl text-xl">Detalle de Servicio</ion-title>
+          <ion-title class="center-title font-roboto">Detalle de Servicio</ion-title>
         </div>
       </ion-toolbar>
     </ion-header>
@@ -20,7 +20,8 @@
 
               <ion-item :button="true">
                 <ion-col size="8" size-md="12">
-                  <ion-label class="custom-title">Fecha: 15/10/2024 </ion-label>
+                  <ion-label class="custom-title"><span>Ticket : </span>#123654 </ion-label>
+                  <ion-label class="custom-title"><span>Fecha : </span>15/10/2024 </ion-label>
                   <ion-label class="text-md custom-subtitle">Estatus: Pendiente por repuesto</ion-label>
                 </ion-col>
                 <ion-col size="4" size-md="12" style="text-align: end;">
@@ -58,8 +59,30 @@
               <ion-accordion value="first">
                 <ion-item slot="header" color="light">
                   <ion-label>Diagnostico</ion-label>
+
                 </ion-item>
-                <div class="ion-padding" slot="content">First Content</div>
+                <ion-content>
+
+                </ion-content>
+                <div class="ion-padding" slot="content">
+                  <ion-item>
+                    <ion-select label="Fallas" placeholder="Listado de fallas">
+                      <ion-select-option value="">Falta de Gas</ion-select-option>
+                      <ion-select-option value="nes">NES</ion-select-option>
+                      <ion-select-option value="n64">Nintendo64</ion-select-option>
+                      <ion-select-option value="ps">PlayStation</ion-select-option>
+                      <ion-select-option value="genesis">Sega Genesis</ion-select-option>
+                      <ion-select-option value="saturn">Sega Saturn</ion-select-option>
+                      <ion-select-option value="snes">SNES</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item>
+                     <ion-textarea label="Observaciones" label-placement="floating" :rows="5"></ion-textarea>
+   
+
+                    <br />
+                  </ion-item>
+                </div>
               </ion-accordion>
               <ion-accordion value="second">
                 <ion-item slot="header" color="light">
@@ -85,7 +108,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonAccordion, IonAccordionGroup, IonLabel, IonButton, IonItem, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon, } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonAccordion, IonAccordionGroup, IonLabel, IonButton, IonItem, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon, IonSelect, IonSelectOption, IonTextarea } from '@ionic/vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
@@ -128,6 +151,7 @@ const navTo = () => {
 
 .chip-status {
   color: #FF8800;
-  border: 1px solid #FF8800
+  border: 1px solid #FF8800;
+  background-color: white;
 }
 </style>

@@ -1,38 +1,71 @@
 <template>
   <ion-page>
-    <ion-header class="no-shadow flex justify-center">
+    <ion-header class="no-shadow-title flex justify-center">
       <ion-toolbar class="center-toolbar">
         <div class="custom-width">
-          <ion-title class="w-auto center-title font-roboto text-xl text-xl">Servicios</ion-title>
+          <ion-title class="w-auto center-title font-roboto text-xl text-xl"
+            style="padding: 10px;">Servicios</ion-title>
         </div>
-        <ion-segment value="segment1" @ionChange="segmentChanged"> <ion-segment-button value="detail"> <ion-label>Segmento 1</ion-label> </ion-segment-button> <ion-segment-button value="segment2"> <ion-label>Segmento 2</ion-label> </ion-segment-button> </ion-segment>
-
       </ion-toolbar>
+
     </ion-header>
-        <ItemOrders @detail="goToGrandchild"></ItemOrders>
-  
+    <ion-content :fullscreen="false" color="light" style="margin-top:30px;">
+    <ion-segment value="segment1" @ionChange="segmentChanged">
+      <ion-segment-button value="detail"> 
+        <ion-label>Nuevos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="approve">
+        <ion-label>Aprobados</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        <ion-label>Historial</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ItemOrders @detail="goToGrandchild"></ItemOrders>
+  </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle,  IonLabel, IonSegment, IonSegmentButton} from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonLabel, IonSegment, IonSegmentButton, IonSearchbar } from '@ionic/vue';
+import { onMounted, ref } from 'vue';
 
 import ItemOrders from '@/components/ItemOrders.vue';
 
 import { useRouter } from 'vue-router';
 
 
+const data = [
+  'Amsterdam',
+  'Buenos Aires',
+  'Cairo',
+  'Geneva',
+  'Hong Kong',
+  'Istanbul',
+  'London',
+  'Madrid',
+  'New York',
+  'Panama City',
+];
+const results: any = ref(data);
+
 const router = useRouter()
 function goToGrandchild() {
   router.push('/tabs/detail');
 }
 
-const segmentChanged = (event:any) => { router.push(`/${event.target.value}`); };
+const segmentChanged = (event: any) => { console.log('hereeee', event.target.value)} //router.push(`/${event.target.value}`); };
+
+function handleInput(event: any) {
+  const query = event.target.value.toLowerCase();
+  results.value = data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400;700&display=swap');
 
-.no-shadow {
+.no-shadow-title {
   box-shadow: none;
 }
 
