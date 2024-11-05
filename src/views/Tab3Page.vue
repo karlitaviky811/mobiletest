@@ -17,7 +17,9 @@
         <ion-row style="width: 100%;">
           <ion-col size="12" size-md="12">
             <ion-list style="gap: 2px">
-
+              <ion-button @click="navToChat">
+                <ion-icon slot="icon-only" :icon="chatbubbleEllipsesOutline"></ion-icon>
+              </ion-button>
               <ion-item :button="true">
                 <ion-col size="8" size-md="12">
                   <ion-label class="custom-title"><span>Ticket : </span>#123654 </ion-label>
@@ -77,8 +79,8 @@
                     </ion-select>
                   </ion-item>
                   <ion-item>
-                     <ion-textarea label="Observaciones" label-placement="floating" :rows="5"></ion-textarea>
-   
+                    <ion-textarea label="Observaciones" label-placement="floating" :rows="5"></ion-textarea>
+
 
                     <br />
                   </ion-item>
@@ -110,12 +112,16 @@
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonAccordion, IonAccordionGroup, IonLabel, IonButton, IonItem, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon, IonSelect, IonSelectOption, IonTextarea } from '@ionic/vue';
 import { useRouter } from 'vue-router';
-
+import { chatbubbleEllipsesOutline} from 'ionicons/icons';
 const router = useRouter()
 
 
 const navTo = () => {
   router.push('/tabs/tab2')
+}
+
+const navToChat = ()=>{
+  router.push('/tabs/chat')
 }
 </script>
 <style>
