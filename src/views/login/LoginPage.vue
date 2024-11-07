@@ -1,7 +1,8 @@
 <template>
-    <ion-page>
+    <ion-page class="btn-grad">
+        <span>7 de Abril</span>
         <ion-content class="ion-padding">
-            <ion-img src="/login.svg" alt=""></ion-img>
+            <ion-img src="/hand-drawn-electrician-cartoon-illustration_23-2151016726.jpg" alt=""></ion-img>
 
             <ion-grid class="container-form">
                 <ion-row class="ion-justify-content-center">
@@ -12,30 +13,19 @@
                 <ion-row>
                     <ion-col class="ion-padding-bottom" size="12">
                         <ion-label class="label">Email</ion-label>
-                        <ion-input
-                            fill="outline"
-                            shape="round"
-                            class="input-text"
-                            placeholder="email@example.com"
-                            v-model="loginForm.email"
-                        ></ion-input>
+                        <ion-input fill="outline" shape="round" class="input-text" placeholder="email@example.com"
+                            v-model="loginForm.email"></ion-input>
                     </ion-col>
                     <ion-col size="12">
                         <ion-label class="label">Password</ion-label>
-                        <ion-input 
-                            fill="outline" 
-                            shape="round" 
-                            type="password"
-                            class="input-text"
-                            placeholder="Enter your password"
-                            v-model="loginForm.password"
-                        ></ion-input>  
+                        <ion-input fill="outline" shape="round" type="password" class="input-text"
+                            placeholder="Enter your password" v-model="loginForm.password"></ion-input>
                     </ion-col>
                 </ion-row>
 
                 <ion-row>
                     <ion-col>
-                        <ion-button @click="handleLogin" class="button-rounded" color="primary" expand="block">Log In</ion-button>
+                        <ion-button @click="handleLogin" class="button-rounded" expand="block" shape="round">Iniciar sesión</ion-button>
                     </ion-col>
                 </ion-row>
 
@@ -45,29 +35,30 @@
                             <ion-text>
                                 <h3 class="sign_in_with">Log in with</h3>
                             </ion-text>
-                
+
                             <div class="wrapper-icons">
                                 <ion-icon src="../../assets/icons/google_icon.svg" size="large"></ion-icon>
                                 <ion-icon src="../../assets/icons/facebook_icon.svg" size="large"></ion-icon>
                                 <ion-icon src="../../assets/icons/github_icon.svg" size="large"></ion-icon>
                             </div>
                         </div>
-                        
+
                     </ion-col>
-             
+
                 </ion-row>
 
                 <ion-row class="ion-justify-content-center">
                     <p style="font-weight: 500">
-                        No account?<ion-text @click.prevent="handleSignup" color="primary" class="sign_in_up"> Sign up</ion-text>
+                        No account?<ion-text @click.prevent="handleSignup" color="primary" class="sign_in_up"> Sign
+                            up</ion-text>
                     </p>
                 </ion-row>
             </ion-grid>
-            <p>LoginForm: {{ JSON.stringify(loginForm, null, 3) }}</p>
-        
+            <!--p>LoginForm: {{ JSON.stringify(loginForm, null, 3) }}</p-->
+
         </ion-content>
     </ion-page>
-  
+
 </template>
 
 <script lang='ts' setup>
@@ -79,15 +70,17 @@ import {
     IonPage,
     IonTitle,
     IonToolbar,
-    IonInput, 
-    IonItem, 
+    IonInput,
+    IonItem,
     IonList,
+    IonLabel,
     IonImg,
     IonGrid,
     IonRow,
     IonCol,
     IonText,
     IonIcon,
+    IonButton,
 } from '@ionic/vue';
 import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
@@ -112,6 +105,9 @@ const handleSignup = () => {
 
 <style scoped>
 
+.ion-padding{
+    background-color: transparent;
+}
 .input-text {
     margin-top: 8px;
 }
@@ -155,6 +151,49 @@ const handleSignup = () => {
 .button-rounded {
     height: 46px;
     margin-top: 2rem;
+    border-radius: 30px;
 }
 
+.btn-grad {
+    margin: 10px;
+    
+
+    transition: 0.5s;
+    background-size: 100% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+ion-button {
+    --background: #0A2253;
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+
+    --color: #fff;
+
+
+    --border-style: solid;
+    --border-width: 1px;
+
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+    --ripple-color: deeppink;
+
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
 </style>

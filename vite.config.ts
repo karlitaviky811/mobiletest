@@ -11,9 +11,18 @@ export default defineConfig({
     vue(),
     legacy()
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: 
+        `@import "@styles/variables.scss"; `
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@styles': path.resolve(__dirname, 'src/styles')
     },
   },
   test: {

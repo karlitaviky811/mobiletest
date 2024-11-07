@@ -1,29 +1,33 @@
 <template>
-    <ion-page> 
-        <ion-header> 
-            <ion-toolbar> 
-                <ion-title>Chat</ion-title> 
-            </ion-toolbar> 
-        </ion-header> 
+    <ion-page>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Chat</ion-title>
+            </ion-toolbar>
+        </ion-header>
         <ion-content>
-            <ion-list> 
+            <ion-list>
                 <ion-item v-for="(message, index) in messages" :key="index" class="chat-bubble"
-                    :class="{ 'mine': message.sender === 'me' }"> 
+                    :class="{ 'mine': message.sender === 'me' }">
                     <div style="display: flex; flex-direction: column;margin-top: 15px;margin-bottom: 15px;">
                         <ion-label>{{ message.message }}</ion-label>
-                        <ion-label>{{ message.username }}</ion-label>     
+                        <ion-label>{{ message.username }}</ion-label>
                     </div>
-                 
+
                 </ion-item>
-            </ion-list> </ion-content> <ion-footer> <ion-toolbar> <ion-input v-model="newMessage"
-                    placeholder="Escribe un mensaje"></ion-input> <ion-button @click="sendMessage">Enviar</ion-button>
+            </ion-list>
+        </ion-content>
+        <ion-footer>
+            <ion-toolbar>
+                <ion-input v-model="newMessage" placeholder="Escribe un mensaje"></ion-input> <ion-button
+                    @click="sendMessage">Enviar</ion-button>
             </ion-toolbar> </ion-footer> </ion-page>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 import { io, Socket } from 'socket.io-client';
-import { IonPage, IonHeader, IonToolbar, IonContent, IonLabel, IonTitle, IonButton, IonGrid, IonItem, IonFooter, IonInput } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonContent, IonLabel, IonTitle, IonButton, IonGrid, IonItem, IonFooter, IonInput, IonList } from '@ionic/vue';
 
 
 const socket = io('http://localhost:5000', {
@@ -79,13 +83,14 @@ ion-footer {
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
+    border: 1px gray;
     background-color: #f1f1f1;
     align-self: flex-start;
 }
 
 .mine {
     background-color: #007bff;
-    color: white;
+    color: #f1f1f1;
     align-self: flex-end;
 }
 </style>

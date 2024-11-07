@@ -2,32 +2,62 @@
     <ion-content color="ligth">
         <ion-grid style="padding: 0;">
             <ion-row>
-                <ion-searchbar class="custom"></ion-searchbar>
+                <ion-searchbar class="custom" placeholder="Custom Placeholder"></ion-searchbar>
 
                 <ion-col size="12" size-md="12" color="light" style="padding: 0;">
                     <ion-list style="gap: 2px">
 
-                        <ion-item lines="none" :button="true" :detail="true" @click="buttonClick()"
+                        <ion-item lines="none" :button="true" :detail=true @click="buttonClick()"
                             style="width: 100%; border: none;">
                             <ion-row class="ion-justify-content-between" style="width: 100%;">
                                 <ion-col size="8" size-md="12">
                                     <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
                                     <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
                                 </ion-col>
-                                <ion-col size="4" size-md="12" class="ion-items-end">
-                                    <ion-chip color="warning" class="chip-status">Pendiente</ion-chip>
+                                <ion-col size="4" size-md="12" style="text-align: end;">
+
+                                    <ion-chip color="warning" class="chip-status-new">Nuevo</ion-chip>
                                     <div style="display: flex; justify-content: center; align-items: center;">
                                         <ion-icon :icon="'/time.svg'"></ion-icon>
                                         <ion-label class="custom-hours">2 hours ago</ion-label>
                                     </div>
                                 </ion-col>
-
                             </ion-row>
                         </ion-item>
+                        <ion-item lines="none" :button="true" :detail=true @click="buttonClick()"
+                            style="width: 100%; border: none;">
+                            <ion-row class="ion-justify-content-between" style="width: 100%;">
+                                <ion-col size="8" size-md="12">
+                                    <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
+                                    <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
+                                </ion-col>
+                                <ion-col size="4" size-md="12" style="text-align: end;">
 
+                                    <ion-chip color="warning" class="chip-status-new">Nuevo</ion-chip>
+                                    <div style="display: flex; justify-content: center; align-items: center;">
+                                        <ion-icon :icon="'/time.svg'"></ion-icon>
+                                        <ion-label class="custom-hours">2 hours ago</ion-label>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-item>
+                        <ion-item lines="none" :button="true" :detail=true @click="buttonClick()"
+                            style="width: 100%; border: none;">
+                            <ion-row class="ion-justify-content-between" style="width: 100%;">
+                                <ion-col size="8" size-md="12">
+                                    <ion-label class="custom-title">Plumber needed for plumbing...</ion-label>
+                                    <ion-label class="text-md custom-subtitle">Machine fitter needed.</ion-label>
+                                </ion-col>
+                                <ion-col size="4" size-md="12" style="text-align: end;">
 
-
-
+                                    <ion-chip color="warning" class="chip-status-new">Nuevo</ion-chip>
+                                    <div style="display: flex; justify-content: center; align-items: center;">
+                                        <ion-icon :icon="'/time.svg'"></ion-icon>
+                                        <ion-label class="custom-hours">2 hours ago</ion-label>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-item>
                     </ion-list>
                 </ion-col>
 
@@ -38,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonItem, IonLabel, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon } from '@ionic/vue';
+import { IonContent, IonItem, IonLabel, IonList, IonCol, IonGrid, IonRow, IonChip, IonIcon, IonSearchbar } from '@ionic/vue';
 import { defineEmits } from 'vue'
 const emit = defineEmits(['inFocus', 'detail'])
 
@@ -112,8 +142,15 @@ function buttonClick() {
     color: #FF8800;
     border: 1px solid #FF8800;
     background-color: white;
+    text-align: end
 }
 
+.chip-status-new {
+    color: #091057;
+    border: 1px solid #091057;
+    background-color: white;
+    text-align: end
+}
 ion-item {
     cursor: pointer;
 }

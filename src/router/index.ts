@@ -7,7 +7,18 @@ const routes: Array<RouteRecordRaw> = [
 
   {
     path: '/',
-    component: () => import ('../views/login/LoginPage.vue')
+    component: () => import('../views/login/LoginPage.vue')
+  },
+
+  {
+    path: '/main',
+    component: () => import('../layouts/MainLayout.vue'),
+    children: [
+      {
+        path: 'profile',
+        component: () => import('../views/ProfilePage.vue')
+      }
+    ]
   },
   {
     path: '/tabs/',
@@ -24,9 +35,9 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab2',
         component: () => import('@/views/Tab2Page.vue'),
-     
+
       },
-      { path: 'detail',  component: () => import('@/views/Tab3Page.vue') },
+      { path: 'detail', component: () => import('@/views/Tab3Page.vue') },
       {
         path: 'tab3',
         component: () => import('@/views/Tab3Page.vue')
@@ -38,7 +49,8 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab4',
         component: () => import('@/views/Tab4PageView.vue')
-      }
+      },
+
     ]
   }
 ]

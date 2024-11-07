@@ -17,9 +17,11 @@
         <ion-row style="width: 100%;">
           <ion-col size="12" size-md="12">
             <ion-list style="gap: 2px">
-              <ion-button @click="navToChat">
+              <div style="display: flex;width: 100%;align-items: end;justify-content: end;">
+                <ion-button @click="navToChat">
                 <ion-icon slot="icon-only" :icon="chatbubbleEllipsesOutline"></ion-icon>
               </ion-button>
+              </div>
               <ion-item :button="true">
                 <ion-col size="8" size-md="12">
                   <ion-label class="custom-title"><span>Ticket : </span>#123654 </ion-label>
@@ -38,9 +40,7 @@
                   <ion-label class="custom-title">Dirección</ion-label>
                   <ion-label class="text-md custom-subtitle">125, 2nd street, California, 19288</ion-label>
                 </ion-col>
-
               </ion-item>
-
               <ion-item :button="true">
                 <ion-col size="12" size-md="12" style="display: flex ;flex-direction: column; gap: 4px;">
                   <ion-label class="custom-title">Servicio</ion-label>

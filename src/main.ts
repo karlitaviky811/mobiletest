@@ -34,7 +34,8 @@ import { IonThumbnail } from '@ionic/vue';
 /* Theme variables */
 //import './theme/variables.css';
 import { addIcons } from 'ionicons';
-
+import './theme/variables.css';
+import { StatusBar, Style } from '@capacitor/status-bar'
 addIcons({
   'home': 'public//home.svg',
   'flag-de': 'assets/flags/de.svg'
@@ -46,3 +47,11 @@ const app = createApp(App)
 router.isReady().then(() => {
   app.mount('#app');
 });
+
+
+StatusBar.setStyle({ style: Style.Light }); 
+// Para texto oscuro y barra clara 
+StatusBar.setStyle({ style: Style.Dark }); 
+// Para texto claro y barra oscura // Configurar el color de fondo de la barra de estado (solo Android) 
+StatusBar.setBackgroundColor({ color: '#f6f6f8' }); // Cambia el color según tus necesidades // Mostrar/Ocultar la barra de estado 
+//StatusBar.show

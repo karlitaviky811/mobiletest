@@ -10,7 +10,7 @@
 
     </ion-header>
     <ion-content :fullscreen="false" color="light" style="margin-top:30px;">
-    <ion-segment value="segment1" @ionChange="segmentChanged">
+    <ion-segment value="detail" @ionChange="segmentChanged">
       <ion-segment-button value="detail"> 
         <ion-label>Nuevos</ion-label>
       </ion-segment-button>
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonLabel, IonSegment, IonSegmentButton, IonSearchbar } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonLabel, IonSegment, IonSegmentButton, IonSearchbar, IonContent } from '@ionic/vue';
 import { onMounted, ref } from 'vue';
 
 import ItemOrders from '@/components/ItemOrders.vue';

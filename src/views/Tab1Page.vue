@@ -1,15 +1,13 @@
 <template>
   <ion-page>
-    <ion-header class="no-background">
-      <ion-toolbar color="white" class="bg-[#0A2253] custom-toolbar shadow-lg">
+    <ion-header class="no-background modal-error">
+      <ion-toolbar class="custom-toolbar content ">
         <ion-row>
-          <ion-col size="1">
-            <ion-icon :icon="menuOutline" size="large" style="padding:10px;"></ion-icon>
-          </ion-col>
-          <ion-col size="7" class="margin:10px; gap: 10px;">
+          <ion-menu-button></ion-menu-button>
 
-            <h2 style="color:white; margin:10px;padding:10px;" class="roboto-thin">Hola, Luis Perez</h2>
-            <ion-label style="color:white; margin:10px;padding:10px; " class="roboto-thi">Daka y
+          <ion-col size="9" class="margin:10px; gap: 10px;z-index:100;">
+            <h2 style="color:black; margin:10px;padding:10px;" class="roboto-thin">Hola, Luis Perez</h2>
+            <ion-label style="color:black; margin:10px;padding:10px; " class="roboto-thi">Daka y
               asociados
             </ion-label>
           </ion-col>
@@ -96,18 +94,36 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonContent, IonLabel, IonImg, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon } from '@ionic/vue';
+import { IonPage, IonHeader, IonMenuButton, IonToolbar, IonContent, IonLabel, IonImg, IonCard, IonCardContent, IonCardHeader, IonCol, IonRow, IonGrid, IonBadge, IonCardSubtitle, IonCardTitle, IonIcon } from '@ionic/vue';
 import { menuOutline } from 'ionicons/icons';
 import { logoIonic } from 'ionicons/icons';
 </script>
 <style>
-.custom-toolbar {
+/*.custom-toolbar {
   height: 150px;
-  /* Ajusta este valor según tus necesidades */
+  border-radius: 15px;
   background-color: #0A2253;
+  background-color:  #ffffff;
   color: white;
   display: flex;
   align-items: center;
+
+}
+  */
+.custom-toolbar {
+  height: 150px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 15px;
+  padding: 20px;
+  box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
 }
 
 .toolbar-title {
@@ -117,7 +133,7 @@ import { logoIonic } from 'ionicons/icons';
   font-size: 30px;
 }
 
-.no-background{
+.no-background {
   box-shadow: none;
 }
 
@@ -146,4 +162,14 @@ import { logoIonic } from 'ionicons/icons';
   box-shadow: none;
   border-radius: 20px;
 }
+
+.bg-class {
+  
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+
+  ion-menu-button{
+    --color: black;
+    --background: white;
+  }
 </style>

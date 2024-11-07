@@ -1,0 +1,89 @@
+$orange: #ffa500;
+$green: #b3ff00;
+$blue: #00b5ff;
+$pink: #ff00bd;
+
+@font-face {
+    font-family: "montserrat";
+    src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+:root {
+
+    /* colors */
+
+    --ion-color-primary: #0A2253;
+    --ion-color-secondary: #36454F;
+
+    /* Text */
+
+    --ion-text-color: #36454F;
+
+    /* font family */
+
+    --ion-font-family: "montserrat";
+
+    /* ion header */
+
+    ion-header {
+        box-shadow: none;
+    }
+
+    /* buttons */
+
+    ion-button {
+        --border-radius: 20px;
+        --padding-start: 21px;
+        --padding-end: 21px;
+        --padding-top: 8px;
+        --padding-bottom: 8px;
+    }
+
+    /* ion-content */
+
+    ion-content {
+        --background: #F3F5FD;
+    }
+
+    /* input */
+
+    ion-input {
+        --background: #D3D3D3;
+    }
+
+    /* toolbar */
+
+    ion-toolbar {
+        --background: white;
+
+        --border-color: white;
+
+        --padding-top: 52px;
+        --padding-start: 0px;
+        --padding-bottom: 15px;
+        --padding-end: 15px;
+    }
+
+    /* title */
+
+    ion-title {
+        font-family: "robotoflex";
+    }
+
+    ion-title.title-large {
+        color: #282828;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    /* ion-modal */
+
+    ion-modal {
+        align-items: end;
+        padding: 13px;
+        --height: 303px !important;
+    }
+
+    
+
+}
